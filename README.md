@@ -7,8 +7,8 @@ Animates text to display letter-by-letter kind of like the way speech text is di
 Install with jam or bower
 
 ```
-bower install jquery.say
-jam install jquery.say
+bower install jquery-say
+jam install jquery-say
 ```
 
 ## Example
