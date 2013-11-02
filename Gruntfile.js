@@ -1,11 +1,6 @@
 module.exports = function( grunt ){
-  grunt.loadTasks('./tasks');
-
   grunt.loadNpmTasks('grunt-contrib-jshint');
   grunt.loadNpmTasks('grunt-contrib-watch');
-  grunt.loadNpmTasks('grunt-contrib-less');
-  grunt.loadNpmTasks('grunt-named-modules');
-  grunt.loadNpmTasks('grunt-express-server');
 
   var config = {
     pkg: grunt.file.readJSON('package.json')
@@ -39,12 +34,6 @@ module.exports = function( grunt ){
 
   config.watch.jshint.files = config.watch.jshint.files.concat(
     config.jshint.all
-  );
-
-  config.watch.grouper.files = config.watch.grouper.files.concat(
-    config.requireGrouper.components.dirs.map( function( dir ){
-      return dir + '/*/*.js';
-    })
   );
 
   grunt.initConfig( config );

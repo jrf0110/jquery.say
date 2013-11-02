@@ -55,9 +55,9 @@
       $chars.eq( curr ).removeClass('hidden').css('visibility', 'visible');
 
       setTimeout(
-        function(){ showChar( $chars, curr, callback )  }
-      , options.endOfSentenceChar.indexOf( text ) > -1
-          ? options.endOfSentenceDelay : options.delay
+        function(){ showChar( $chars, curr, callback );  }
+      , options.endOfSentenceChar.indexOf( text ) > -1 ?
+          options.endOfSentenceDelay : options.delay
       );
     };
 

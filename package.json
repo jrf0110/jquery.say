@@ -1,0 +1,21 @@
+{
+  "name": "jquery-say",
+  "version": "1.0.0",
+  "description": "Animate text displaying characters one-by-one with a specified delay, and a different delay between the ends of sentences and elements",
+  "main": "src/jquery.say.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "jquery",
+    "animate",
+    "text"
+  ],
+  "author": "John Fawcett",
+  "license": "MIT",
+  "devDependencies": {
+    "grunt": "~0.4.1",
+    "grunt-contrib-jshint": "~0.7.1",
+    "grunt-contrib-watch": "~0.5.3"
+  }
+}
