@@ -2,6 +2,8 @@
 
 Animates text to display letter-by-letter kind of like the way speech text is displayed in video games.
 
+http://jquery-say.j0.hn
+
 ## Install
 
 Install with jam or bower
