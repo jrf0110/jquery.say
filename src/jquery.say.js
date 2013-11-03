@@ -41,7 +41,7 @@
     // The main element loop
     var currEl = -1;
     var showEl = function(){
-      if ( currEl++ === $this.length ) return;
+      if ( currEl++ === $this.length ) return options.onComplete();
 
       showChar( $this.eq( currEl ).find('.text-character.hidden'), function(){
         setTimeout( showEl, options.elementJumpDelay );
