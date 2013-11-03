@@ -30,7 +30,7 @@
       var $el = $(this);
 
       $el.html(
-        $el.text().split('').map( function( c ){
+        $.map( $el.text().split(''), function( c ){
           return '<span class="text-character hidden">' + c + '</span>';
         }).join('')
       );
@@ -63,6 +63,7 @@
       if ( $chars.length === 0 ) return callback();
 
       var text = $chars.eq( curr ).text();
+
       $chars.eq( curr ).removeClass('hidden').css('visibility', 'visible');
 
       var delay = options.delay;
@@ -73,7 +74,7 @@
       }
 
       if ( ++curr === $chars.length ){
-        options.onChar( text, $chars.eq( curr ) );
+        options.onChar( text, $chars.eq( curr - 1 ) );
         return callback();
       }
 
@@ -82,10 +83,10 @@
       , delay
       );
 
-      options.onChar( text, $chars.eq( curr ) );
+      options.onChar( text, $chars.eq( curr - 1 ) );
 
       if ( eos ){
-        options.onEndOfSentence( $chars.eq( curr ) );
+        options.onEndOfSentence( $chars.eq( curr - 1 ) );
       }
     };
 
