@@ -32,6 +32,14 @@ Make all ```p``` tags animate their text:
       , endOfSentenceDelay: 500
         // default .?!;   Character denoting sentence end
       , endOfSentenceChar: [ '.', '?', '!' ]
+        // Called when the entire sequence is complete
+      , onComplete:       function(){}
+        // Called when an element is complete
+      , onEndOfElement:   function( $prev, $curr ){}
+        // Called when a sentence is complete
+      , onEndOfSentence:  function( $el ){}
+        // Called for each character processed
+      , onChar:           function( character, $el ){}
       });
     });
     </script>
