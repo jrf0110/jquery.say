@@ -39,13 +39,15 @@
     $this.css('visibility', 'visible');
 
     // The main element loop
-    var currEl = -1;
+    var currEl = 0;
     var showEl = function(){
-      if ( currEl++ === $this.length ) return options.onComplete();
+      if ( $this.length === 0 ) return options.onComplete();
 
       showChar( $this.eq( currEl ).find('.text-character.hidden'), function(){
+        if ( ++currEl === $this.length ) return options.onComplete();
+
         setTimeout( showEl, options.elementJumpDelay );
-        options.onEndOfElement( $this.eq( currEl -1 ), $this.eq( currEl ) );
+        options.onEndOfElement( $this.eq( currEl ), $this.eq( currEl ) );
       });
     };
 
@@ -53,12 +55,12 @@
     var showChar = function( $chars, curr, callback ){
       if ( typeof curr === 'function' ){
         callback = curr;
-        curr = -1;
+        curr = 0;
       } else {
-        curr = curr === null ? -1 : curr;
+        curr = curr === null ? 0 : curr;
       }
 
-      if ( curr++ === $chars.length ) return callback();
+      if ( $chars.length === 0 ) return callback();
 
       var text = $chars.eq( curr ).text();
       $chars.eq( curr ).removeClass('hidden').css('visibility', 'visible');
@@ -68,6 +70,11 @@
 
       if ( eos ){
         delay = options.endOfSentenceDelay;
+      }
+
+      if ( ++curr === $chars.length ){
+        options.onChar( text, $chars.eq( curr ) );
+        return callback();
       }
 
       setTimeout(
