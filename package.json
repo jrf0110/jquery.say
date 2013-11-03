@@ -1,6 +1,6 @@
 {
   "name": "jquery-say",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Animate text displaying characters one-by-one with a specified delay, and a different delay between the ends of sentences and elements",
   "main": "src/jquery.say.js",
   "scripts": {
