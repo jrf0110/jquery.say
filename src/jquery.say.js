@@ -67,7 +67,7 @@
       $chars.eq( curr ).removeClass('hidden').css('visibility', 'visible');
 
       var delay = options.delay;
-      var eos = options.endOfSentenceChar.indexOf( text ) > -1;
+      var eos = $.inArray( text, options.endOfSentenceChar ) > -1;
 
       if ( eos ){
         delay = options.endOfSentenceDelay;
